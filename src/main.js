@@ -148,7 +148,8 @@ export default class LevelSelector extends UICorePlugin {
       this.buttonElement().text(this.currentLevel ? 'AUTO (' + this.currentLevel.label + ')' : 'AUTO')
     }
     else {
-      this.buttonElement().text(this.findLevelBy(level).label)
+      level = this.findLevelBy(level)
+      this.buttonElement().text(level ? level.label : '?')
     }
   }
   updateCurrentLevel(info) {
