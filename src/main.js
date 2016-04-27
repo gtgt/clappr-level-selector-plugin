@@ -101,6 +101,7 @@ export default class LevelSelector extends UICorePlugin {
   }
 
   findLevelBy(id) {
+    if (!this.levels) return
     var foundLevel
     this.levels.forEach((level) => { if (level.id === id) {foundLevel = level} })
     return foundLevel
